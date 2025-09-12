@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ganti [Nama Anda] dengan nama Anda -->
+    <title>Portofolio Mochammad Fajar Firmansyah</title>
+    <!-- Memuat Tailwind CSS untuk styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Menggunakan font Inter sebagai default untuk seluruh halaman */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-indigo-950 text-slate-200">
+
+    <div class="relative isolate">
+        <!-- Elemen ini adalah untuk efek gradien di latar belakang -->
+        <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+            <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-sky-400 to-indigo-600 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"></div>
+        </div>
+
+        <!-- AWAL BAGIAN NAVIGASI HEADER -->
+        <header class="absolute inset-x-0 top-0 z-50">
+            <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
+              <div class="flex lg:flex-1">
+                <a href="#" class="-m-1.5 p-1.5">
+                  <span class="sr-only">Fajar</span>
+                  <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Logo">
+                </a>
+              </div>
+              <div class="flex lg:hidden">
+                <button id="open-menu-button" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200">
+                  <span class="sr-only">Buka menu utama</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-6">
+                    <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+              <div class="hidden lg:flex lg:gap-x-12">
+                <a href="#about" class="text-sm/6 font-semibold text-white hover:text-indigo-400 transition-colors">Tentang Saya</a>
+                <a href="#hobbies" class="text-sm/6 font-semibold text-white hover:text-indigo-400 transition-colors">Hobi</a>
+                <a href="#education" class="text-sm/6 font-semibold text-white hover:text-indigo-400 transition-colors">Pendidikan</a>
+                <a href="#organisasi" class="text-sm/6 font-semibold text-white hover:text-indigo-400 transition-colors">Pengalaman</a>
+              </div>
+              <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                <a href="mochammad@student.undikhsa.ac.id" class="text-sm/6 font-semibold text-white">Hubungi Saya <span aria-hidden="true">&rarr;</span></a>
+              </div>
+            </nav>
+            <!-- Menu Mobile (Dialog) -->
+            <dialog id="mobile-menu" class="bg-transparent backdrop:bg-black/20 p-0 m-0 w-full h-full lg:hidden">
+                <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
+                  <div class="flex items-center justify-between">
+                    <a href="#" class="-m-1.5 p-1.5">
+                      <span class="sr-only">Nama Anda</span>
+                      <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Logo">
+                    </a>
+                    <button id="close-menu-button" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-200">
+                      <span class="sr-only">Tutup menu</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-6">
+                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="mt-6 flow-root">
+                    <div class="-my-6 divide-y divide-white/10">
+                      <div class="space-y-2 py-6">
+                        <a href="#about" class="mobile-menu-link -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Tentang Saya</a>
+                        <a href="#hobbies" class="mobile-menu-link -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Hobi</a>
+                        <a href="#education" class="mobile-menu-link -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Pendidikan</a>
+                        <a href="#organisasi" class="mobile-menu-link -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Pengalaman</a>
+                        <a href="#profiles" class="mobile-menu-link -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Profil</a>
+                      </div>
+                      <div class="py-6">
+                        <a href="mailto:emailanda@example.com" class="mobile-menu-link -mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-white/5">Hubungi Saya</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </dialog>
+        </header>
+        <!-- AKHIR BAGIAN NAVIGASI HEADER -->
+
+        <!-- Konten Utama Halaman -->
+        <main>
+            <!-- AWAL BAGIAN HERO (PERKENALAN) -->
+            <section id="about" class="container mx-auto px-6 py-32 sm:py-48 lg:py-40 flex flex-col md:flex-row items-center gap-12 text-center md:text-left">
+                <!-- Kolom Teks Perkenalan -->
+                <div class="md:w-3/5 z-10">
+                    <span class="text-sky-400 font-semibold">Halo, saya</span>
+                    <!-- Edit nama Anda di sini -->
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mt-2 mb-4">Mochammad Fajar Firmansyah</h1>
+                    <!-- Edit jabatan atau status Anda di sini -->
+                    <h2 class="text-2xl md:text-3xl font-medium text-slate-300 mb-6">Student</h2>
+                    <!-- Edit paragraf perkenalan singkat di sini -->
+                    <p class="text-lg text-slate-400 max-w-xl mx-auto md:mx-0">
+                        Saya adalah mahasiswa Universitas Pendidikan Ganesha, Fakultas Teknik dan Kejuruan, Prodi Sistem Informasi.
+                    </p>
+                    <div class="mt-10 flex items-center justify-center md:justify-start gap-x-6">
+                        <a href="#organisasi" class="rounded-md bg-sky-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500">Lihat Pengalaman Saya</a>
+                        <a href="#kontak" class="text-sm font-semibold leading-6 text-white">Hubungi Saya <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+                <!-- Kolom Foto Profil -->
+                <div class="md:w-2/5 flex justify-center z-10">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-indigo-900 overflow-hidden border-4 border-sky-500 shadow-2xl">
+                        <!-- Ganti URL di src="..." dengan URL foto Anda -->
+                        <img src="DSCF2276 (1).JPG" alt="Foto profil Anda" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </section>
+            <!-- AKHIR BAGIAN HERO -->
+            
+            <!-- Wrapper untuk sisa konten halaman -->
+            <div class="container mx-auto px-6">
+                <!-- Hobi Section -->
+                <div id="hobbies" class="py-24 sm:py-32">
+                    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                        <div class="mx-auto max-w-2xl lg:text-center">
+                            <p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Beberapa Hobi Saya</p>
+                        </div>
+                        <div class="mx-auto mt-16 max-w-4xl sm:mt-20 lg:mt-24">
+                            <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
+                                <!-- Hobi 1: Membaca -->
+                                <div class="flex flex-col items-center text-center p-6 bg-white/5 rounded-2xl">
+                                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-500">
+                                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.88 1.48L16.27 3.09a1 1 0 0 0-.82.16L3.92 10.5a1 1 0 0 0-.25 1.41l.16.26a1 1 0 0 0 1.41-.25L14.75 4.31a1 1 0 0 1 .16-.82L16.32 1.48"></path><path d="M13.25 14.75l-4.22-4.22"></path><path d="M12.5 12.5l-2.22-2.22"></path><path d="M15.5 15.5l-2.22-2.22"></path><path d="M22 22L11.5 11.5"></path></svg>
+                                    </div>
+                                    <dt class="mt-4 font-semibold text-white">Billiard</dt>
+                                    <dd class="mt-2 leading-7 text-gray-400">Billiard melatih saya untuk tetap fokus di segala situasi, dan juga melatih saya untuk memikirkan beberapa langkah kedepan sebelum berjalan.</dd>
+                                </div>
+                                <!-- Hobi 2: Catur -->
+                                <div class="flex flex-col items-center text-center p-6 bg-white/5 rounded-2xl">
+                                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-500">
+                                      <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a10 10 0 0 1 10 10c0 1.54-1.28 3.53-2.92 5.15-1.12 1.08-2.5 1.83-3.79 2.21-1.35.39-2.78.43-4.14.12-1.39-.32-2.73-1.02-3.83-1.89C6.46 16.54 5.58 15.35 5 14"></path><path d="M4.68 18.23l-.12-.13c-1.15-1.2-2.03-2.61-2.43-4.13"></path><path d="M17.43 14.54c-1.35.39-2.78.43-4.14.12-1.39-.32-2.73-1.02-3.83-1.89"></path></svg>
+                                    </div>
+                                    <dt class="mt-4 font-semibold text-white">Hiking</dt>
+                                    <dd class="mt-2 leading-7 text-gray-400">Hiking mengajarkan saya untuk tetap sabar dan melanjutkan apa yang sudah dimulai demi hasil yang sudah dari awal kita dambakan.</dd>
+                                </div>
+                                <!-- Hobi 3: Mendaki -->
+                                <div class="flex flex-col items-center text-center p-6 bg-white/5 rounded-2xl">
+                                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-500">
+                                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c.98-.98 1.85-.98 2.5 0s1.85.98 2.5 0c.65-.98.98-1.85.98-2.5s-.98-1.85-2.5-2.5-1.85-.98-2.5 0c-.65.98-.98 1.85-.98 2.5s.98 1.85 2.5 2.5z"></path><path d="M12 12L7.5 7.5"></path><path d="M12 12L16.5 7.5"></path><path d="M12 12L12 16.5"></path><path d="M12 12L7.5 16.5"></path><path d="M12 12L16.5 16.5"></path><path d="M12 12L12 7.5"></path><path d="M12 12L7.5 7.5"></path></svg>
+                                    </div>
+                                    <dt class="mt-4 font-semibold text-white">Basket</dt>
+                                    <dd class="mt-2 leading-7 text-gray-400">Basket membuat saya bugar dan juga melatih kerja sama tim.</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Riwayat Pendidikan -->
+                <div id="education" class="py-24 sm:py-32">
+                    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                        <div class="mx-auto max-w-2xl lg:text-center">
+                            <h2 class="text-base font-semibold leading-7 text-indigo-400">Pendidikan</h2>
+                            <p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Pendidikan Saya</p>
+                            <p class="mt-6 text-lg leading-8 text-gray-300">
+                                Berikut adalah perjalanan pendidikan formal yang telah saya tempuh.
+                            </p>
+                        </div>
+                        <div class="mx-auto mt-16 flow-root max-w-3xl">
+                            <div class="-my-8">
+                                <!-- Item Pendidikan 1 -->
+                                <div class="relative py-8">
+                                    <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-white/10" aria-hidden="true"></div>
+                                    <div class="relative flex items-center gap-x-6">
+                                        <div class="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-gray-800 ring-1 ring-white/10">
+                                          <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                        </div>
+                                        <div class="flex-auto">
+                                            <h3 class="text-lg font-semibold leading-7 text-white">Universitas Pendidikan Ganesha</h3>
+                                            <p class="mt-1 text-base leading-7 text-gray-400">Sistem Informasi</p>
+                                        </div>
+                                        <time class="flex-none py-0.5 text-xs leading-5 text-gray-400">2023 - Sekarang</time>
+                                    </div>
+                                </div>
+                                  <!-- Item Pendidikan 2 -->
+                                <div class="relative py-8">
+                                    <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-white/10" aria-hidden="true"></div>
+                                    <div class="relative flex items-center gap-x-6">
+                                        <div class="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-gray-800 ring-1 ring-white/10">
+                                          <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                        </div>
+                                        <div class="flex-auto">
+                                            <h3 class="text-lg font-semibold leading-7 text-white">SMA NEGERI 1 KEDIRI</h3>
+                                            <p class="mt-1 text-base leading-7 text-gray-400">Ilmu Pengetahuan Sosial</p>
+                                        </div>
+                                        <time class="flex-none py-0.5 text-xs leading-5 text-gray-400">2020 - 2023</time>
+                                    </div>
+                                </div>
+                                  <!-- Item Pendidikan 3 -->
+                                <div class="relative py-8">
+                                    <div class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-white/10" aria-hidden="true"></div>
+                                    <div class="relative flex items-center gap-x-6">
+                                        <div class="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-gray-800 ring-1 ring-white/10">
+                                          <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                        </div>
+                                        <div class="flex-auto">
+                                            <h3 class="text-lg font-semibold leading-7 text-white">SMP NEGERI 1 KEDIRI</h3>
+                                            <p class="mt-1 text-base leading-7 text-gray-400">-</p>
+                                        </div>
+                                        <time class="flex-none py-0.5 text-xs leading-5 text-gray-400">2017 - 2020</time>
+                                    </div>
+                                </div>
+                                  <!-- Item Pendidikan 4 -->
+                                <div class="relative py-8">
+                                    <div class="relative flex items-center gap-x-6">
+                                        <div class="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-gray-800 ring-1 ring-white/10">
+                                          <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                        </div>
+                                        <div class="flex-auto">
+                                            <h3 class="text-lg font-semibold leading-7 text-white">SD NEGERI 1 KEDIRI</h3>
+                                            <p class="mt-1 text-base leading-7 text-gray-400">-</p>
+                                        </div>
+                                        <time class="flex-none py-0.5 text-xs leading-5 text-gray-400">2011 - 2017</time>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- AWAL BAGIAN ORGANISASI -->
+                <section id="organisasi" class="py-20 md:py-20">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">Pengalaman Organisasi dan Lomba</h2>
+                        <p class="text-slate-400 mt-2">Organisasi yang pernah saya ikuti dan kontribusi saya.</p>
+                    </div>
+                    <!-- Mengubah dari grid menjadi flexbox untuk centering -->
+                    <div class="flex flex-wrap items-stretch justify-center gap-8">
+                        
+                        <!-- KARTU ORGANISASI 1 -->
+                        <div class="bg-indigo-900/50 ring-1 ring-white/10 rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300 w-full max-w-sm">
+                            <!-- Wrapper untuk gambar agar bisa diberi background -->
+                            <div class="w-full h-48 bg-indigo-950">
+                                <img src="Salinan LOGO HMJ.png" alt="Logo Organisasi 1" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-6">
+                                <!-- Ganti Nama Organisasi -->
+                                <h3 class="text-xl font-bold text-white mb-2">HMJ TI UNDIKSHA</h3>
+                                <!-- Ganti Jabatan dan Periode -->
+                                <p class="text-sky-400 text-sm font-medium mb-2">Anggota Bidang 2 Sub Bidang Olah Raga | 2025 - Sekarang</p>
+                                <!-- Ganti Deskripsi -->
+                                <p class="text-slate-400 mb-4">Di sini saya bertanggung jawab atas komunitas olah raga Basket lingkup Mahasiswa TI UNDIKSHA.</p>
+                                <!-- Ganti tautan ke situs web organisasi -->
+                                <a href="https://hmjti.undiksha.ac.id/" target="blank" class="text-sky-400 hover:text-sky-300 flex items-center gap-2">
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    Situs Web Organisasi
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- KARTU ORGANISASI 2 -->
+                        <div class="bg-indigo-900/50 ring-1 ring-white/10 rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300 w-full max-w-sm">
+                            <!-- Wrapper untuk gambar agar bisa diberi background -->
+                            <div class="w-full h-48 bg-indigo-950">
+                                <img src="HANDBALL SERTIF FAJAR_page-0001.jpg" alt="Logo Organisasi 2" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">HANDBALL</h3>
+                                <p class="text-sky-400 text-sm font-medium mb-2">Porjar Handball 2023 </p>
+                                <p class="text-slate-400 mb-4">Masuk dalam lineup Porjar Cabor Handball, berposisi sebagai wing kiri dan juga pivot.</p>
+                                <a href="https://www.instagram.com/handballtabanan?igsh=NzVyYjFrNWE4cmVr" target="blank" class="text-sky-400 hover:text-sky-300 flex items-center gap-2">
+                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    Akun Tim
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- AKHIR BAGIAN ORGANISASI -->
+            </div>
+        </main>
+
+        <!-- AWAL BAGIAN FOOTER -->
+        <footer class="bg-transparent border-t border-slate-700">
+            <div class="container mx-auto px-6 py-6 text-center text-slate-400">
+                <div class="flex justify-center gap-6 mb-4">
+                    <!-- Ganti tanda "#" dengan URL profil sosial media Anda -->
+                    <a href="https://github.com/FajarFirmansyah28" target="_blank" class="text-slate-400 hover:text-white transition duration-300" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                    <a href="https://www.instagram.com/mofajarfir?igsh=MXFyMXgweHZvb3Nsaw==" target="blank" class="text-slate-400 hover:text-white transition duration-300" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                </div>
+                <!-- Edit copyright dengan nama Anda -->
+                <p>&copy; 2025 Mochammad Fajar Firmansyah. Dibuat dengan cinta dan kode.</p>
+            </div>
+        </footer>
+        <!-- AKHIR BAGIAN FOOTER -->
+
+        <!-- Elemen ini adalah untuk efek gradien di latar belakang -->
+        <div aria-hidden="true" class="absolute inset-x-0 -bottom-40 -z-10 transform-gpu overflow-hidden blur-3xl">
+            <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-sky-400 to-indigo-600 opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"></div>
+       </div>
+    </div>
+
+    <!-- Script untuk fungsionalitas menu mobile -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openMenuButton = document.getElementById('open-menu-button');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+    
+        openMenuButton.addEventListener('click', () => {
+            mobileMenu.showModal();
+        });
+    
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.close();
+        });
+        
+        // Menutup menu saat salah satu tautan di dalamnya diklik
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.close();
+            });
+        });
+    </script>
+</body>
+</html>
+
