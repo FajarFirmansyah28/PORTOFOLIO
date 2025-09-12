@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Projek | Kalkulator Luas</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    /* Transisi sederhana untuk menampilkan/menyembunyikan form */
+    .calculator-form {
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    .form-hidden {
+      opacity: 0;
+      transform: translateY(10px);
+      height: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 antialiased">
+
+  <!-- Header -->
+  <header class="bg-white/80 backdrop-blur-sm sticky top-0 z-40 border-b border-gray-200">
+    <nav class="container mx-auto px-6 py-4">
+      <a href="index.html" class="text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors">
+        &larr; Kembali ke Portofolio
+      </a>
+    </nav>
+  </header>
+
+  <!-- Konten Utama -->
+  <main class="container mx-auto px-6 py-16 sm:py-24">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Kalkulator Luas Bangun Datar</h1>
+      <p class="mt-6 text-lg leading-8 text-gray-600">
+        Sebuah alat sederhana yang dibuat untuk menghitung luas berbagai bangun datar. Pilih salah satu bangun di bawah ini untuk memulai.
+      </p>
+    </div>
+
+    <!-- Bagian Kalkulator -->
+    <div class="mt-16 max-w-lg mx-auto bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
+      
+      <!-- Dropdown Pilihan Bentuk -->
+      <div class="mb-8">
+        <label for="shape-select" class="block text-sm font-medium leading-6 text-gray-900">Pilih Bangun Datar</label>
+        <select id="shape-select" name="shape" class="mt-2 block w-full rounded-md border-0 py-2.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          <option value="persegi">Persegi</option>
+          <option value="persegi-panjang">Persegi Panjang</option>
+          <option value="segitiga">Segitiga</option>
+          <option value="lingkaran">Lingkaran</option>
+        </select>
+      </div>
+
+      <!-- Kontainer Form -->
+      <div>
+        <!-- Form Persegi -->
+        <form id="form-persegi" class="calculator-form space-y-6">
+            <div>
+                <label for="sisi-persegi" class="block text-sm font-medium leading-6 text-gray-700">Sisi (cm)</label>
+                <div class="mt-2">
+                    <input type="number" name="sisi-persegi" id="sisi-persegi" class="block w-full rounded-md border-0 bg-white py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Masukkan panjang sisi" required min="0.01" step="any">
+                </div>
+            </div>
+            <button type="submit" class="w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors">Hitung Luas</button>
+        </form>
+
+        <!-- Form Persegi Panjang -->
+        <form id="form-persegi-panjang" class="calculator-form space-y-6 form-hidden">
+            <div>
+                <label for="panjang" class="block text-sm font-medium leading-6 text-gray-700">Panjang (cm)</label>
+                <div class="mt-2">
+                    <input type="number" name="panjang" id="panjang" class="block w-full rounded-md border-0 bg-white py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Masukkan panjang" required min="0.01" step="any">
+                </div>
+            </div>
+            <div>
+                <label for="lebar" class="block text-sm font-medium leading-6 text-gray-700">Lebar (cm)</label>
+                <div class="mt-2">
+                    <input type="number" name="lebar" id="lebar" class="block w-full rounded-md border-0 bg-white py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Masukkan lebar" required min="0.01" step="any">
+                </div>
+            </div>
+            <button type="submit" class="w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors">Hitung Luas</button>
+        </form>
+        
+        <!-- Form Segitiga -->
+        <form id="form-segitiga" class="calculator-form space-y-6 form-hidden">
+            <div>
+                <label for="alas" class="block text-sm font-medium leading-6 text-gray-700">Alas (cm)</label>
+                <div class="mt-2">
+                    <input type="number" name="alas" id="alas" class="block w-full rounded-md border-0 bg-white py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Masukkan alas" required min="0.01" step="any">
+                </div>
+            </div>
+            <div>
+                <label for="tinggi" class="block text-sm font-medium leading-6 text-gray-700">Tinggi (cm)</label>
+                <div class="mt-2">
+                    <input type="number" name="tinggi" id="tinggi" class="block w-full rounded-md border-0 bg-white py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Masukkan tinggi" required min="0.01" step="any">
+                </div>
+            </div>
+            <button type="submit" class="w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors">Hitung Luas</button>
+        </form>
+
+        <!-- Form Lingkaran -->
+        <form id="form-lingkaran" class="calculator-form space-y-6 form-hidden">
+            <div>
+                <label for="jari-jari" class="block text-sm font-medium leading-6 text-gray-700">Jari-jari (cm)</label>
+                <div class="mt-2">
+                    <input type="number" name="jari-jari" id="jari-jari" class="block w-full rounded-md border-0 bg-white py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Masukkan jari-jari" required min="0.01" step="any">
+                </div>
+            </div>
+            <button type="submit" class="w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors">Hitung Luas</button>
+        </form>
+      </div>
+
+      <!-- Tampilan Hasil -->
+      <div id="result-container" class="mt-8 text-center bg-indigo-50 p-6 rounded-lg hidden opacity-0 transition-opacity duration-300 border border-indigo-200">
+        <p class="text-indigo-700 font-medium">Hasil Perhitungan:</p>
+        <p id="result-text" class="text-3xl font-bold text-indigo-900 mt-2"></p>
+        <p id="result-formula" class="text-sm text-indigo-600 mt-1"></p>
+      </div>
+    </div>
+  </main>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const shapeSelect = document.getElementById('shape-select');
+        const forms = document.querySelectorAll('.calculator-form');
+        const resultContainer = document.getElementById('result-container');
+        const resultText = document.getElementById('result-text');
+        const resultFormula = document.getElementById('result-formula');
+
+        // Fungsi untuk mengganti form berdasarkan pilihan dropdown
+        function switchForm(targetShape) {
+            forms.forEach(form => {
+                form.classList.toggle('form-hidden', form.id !== `form-${targetShape}`);
+            });
+            resultContainer.classList.add('hidden', 'opacity-0');
+        }
+        
+        // Event listener untuk dropdown
+        shapeSelect.addEventListener('change', (e) => {
+            switchForm(e.target.value);
+        });
+
+        // Fungsi untuk menampilkan hasil
+        function showResult(value, formula) {
+            resultText.innerHTML = `${value} cm<sup>2</sup>`;
+            resultFormula.textContent = `Rumus: ${formula}`;
+            resultContainer.classList.remove('hidden');
+            setTimeout(() => resultContainer.classList.remove('opacity-0'), 50); // Delay untuk transisi
+        }
+        
+        // Logika Kalkulasi
+        document.getElementById('form-persegi').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const sisi = parseFloat(document.getElementById('sisi-persegi').value);
+            if (sisi > 0) {
+                const luas = sisi * sisi;
+                showResult(luas.toLocaleString('id-ID'), 'Sisi x Sisi');
+            }
+        });
+
+        document.getElementById('form-persegi-panjang').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const panjang = parseFloat(document.getElementById('panjang').value);
+            const lebar = parseFloat(document.getElementById('lebar').value);
+            if (panjang > 0 && lebar > 0) {
+                const luas = panjang * lebar;
+                showResult(luas.toLocaleString('id-ID'), 'Panjang x Lebar');
+            }
+        });
+        
+        document.getElementById('form-segitiga').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const alas = parseFloat(document.getElementById('alas').value);
+            const tinggi = parseFloat(document.getElementById('tinggi').value);
+            if (alas > 0 && tinggi > 0) {
+                const luas = 0.5 * alas * tinggi;
+                showResult(luas.toLocaleString('id-ID'), '½ x Alas x Tinggi');
+            }
+        });
+
+        document.getElementById('form-lingkaran').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const jari = parseFloat(document.getElementById('jari-jari').value);
+            if (jari > 0) {
+                const luas = Math.PI * Math.pow(jari, 2);
+                showResult(luas.toLocaleString('id-ID', { maximumFractionDigits: 2 }), 'π x Jari-jari²');
+            }
+        });
+    });
+  </script>
+</body>
+</html>
+
